@@ -82,7 +82,7 @@ echo "Installing into ${PREFIX}" | sed "s#$HOME#~#g"
 mkdir -p ${PREFIX}
 releaseUrl=$(curl --head --silent ${repo_url}/releases/latest | grep "Location:" | cut -c11-)
 releaseTag=$(echo $releaseUrl | awk 'BEGIN{FS="/"}{print $8}' | tr -d '\r')
-url=${repo_url}/releases/download/${releaseTag}/okta-aws-cli-${releaseTag:1}.jar
+url=${repo_url}/releases/download/${releaseTag}/okta-aws-cli-2.0.0.jar
 dest=${PREFIX}/$(basename ${url})
 echo "Latest release JAR file: ${url}"
 echo "Fetching JAR file → ${dest}" | sed "s#$HOME#~#g"
